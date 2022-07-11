@@ -1,0 +1,194 @@
+CREATE TABLE country
+(
+    name          VARCHAR,
+    area          BIGINT,
+    population    BIGINT,
+    language      VARCHAR,
+    capital       TEXT,
+    national_food VARCHAR
+
+);
+
+INSERT INTO country (name, area, population, language, capital, national_food)
+values ('Kyrgyzstan', 199900, 6000000, 'kyrgyz', 'Bishkek', 'Plov and Besh barmak'),
+       ('China', 9500000, 1000000000, 'chinese', 'Beijing', 'Baozi,miantiao,malatang,huoguo'),
+       ('France', 547000, 66600000, 'french', 'Paris', 'Croissant'),
+       ('Korea', 219000, 76000000, 'korean', 'Seoul', 'Kimbap,bipimbap,ramen,ttoekboki'),
+       ('Germany', 357000, 83000000, 'german', 'Berlin', 'Sauerbraten');
+
+
+ALTER TABLE country ADD favorite VARCHAR DEFAULT 'I love all this countries!';
+
+SELECT *FROM country;
+
+CREATE TABLE family(
+    number_of_people INT,
+    number_of_school_student INT,
+    country VARCHAR,
+    nationality VARCHAR,
+    favorite_food TEXT
+);
+
+INSERT INTO family (number_of_people, number_of_school_student, country, nationality, favorite_food)
+values (7,1,'Kyrgyzstan','kyrgyz','Plov and manty'),
+       (4,2,'USA','chinese','miantiao'),
+       (3,1,'Australia','american','fast-food'),
+       (5,3,'Kazakhstan','russian','besh barmak'),
+       (6,4,'Canada','korean','kimbap,ramen');
+
+
+DELETE FROM family where country = 'Kazakhstan';
+
+
+CREATE TABLE food (
+    name VARCHAR,
+    from_country VARCHAR,
+    taste VARCHAR,
+    founded INT,
+    time_of_cooking VARCHAR
+
+);
+
+INSERT INTO food (name, from_country, taste, founded, time_of_cooking)
+values ('Huoguo','China','spacy',1700,'preparing quickly'),
+       ('Croissant','France','sweet',1970,'slowly');
+
+CREATE TABLE market(
+    id INT,
+    name VARCHAR,
+    opening_time INT,
+    owner VARCHAR,
+    profit INT
+
+);
+
+INSERT INTO market(id, name, opening_time, owner, profit)
+values (2,'Sun',2018,'Datka',200000000);
+
+
+CREATE TABLE school(
+    id INT ,
+    name VARCHAR,
+    founded INT,
+    sponsors VARCHAR,
+    city VARCHAR
+);
+
+INSERT INTO school(id, name, founded, sponsors, city)
+values (7,'Cambridge',2020,'Nurmuhammad and Jaulanbek','Bishkek');
+
+CREATE TABLE course (
+    course_name VARCHAR,
+    groups VARCHAR,
+    sum_of_student INT,
+    director VARCHAR,
+    sum_of_teacher INT
+
+);
+
+INSERT INTO course(course_name, groups, sum_of_student, director, sum_of_teacher)
+values ('Java','Java-6',300,'Esen Niyazov',40);
+
+CREATE TABLE films (
+    film_name VARCHAR,
+    year INT,
+    director VARCHAR,
+    actor VARCHAR,
+    description VARCHAR
+);
+
+INSERT INTO films(film_name, year, director, actor, description)
+values ('Countdown',2019,'Robert','Kristi','Horror');
+
+
+CREATE TABLE fruit (
+    taste VARCHAR,
+    name VARCHAR,
+    color VARCHAR,
+    shape VARCHAR,
+    weight INT
+);
+
+INSERT INTO fruit(taste, name, color, shape, weight)
+values ('sweet','watermelon','green-white','oval',7);
+
+CREATE TABLE laptop(
+    name VARCHAR,
+    model VARCHAR,
+    version INT,
+    owner VARCHAR,
+    size INT
+);
+
+INSERT INTO laptop(name, model, version, owner, size)
+values ('DESKTOP-N4D54FT','MI',10,'Datka',17);
+
+CREATE TABLE jobs (
+    id INT,
+    job_name VARCHAR,
+    working_mode INT,
+    min_salary INT NOT NULL ,
+    max_salary INT NOT NULL
+);
+
+INSERT INTO jobs(id, job_name, working_mode, min_salary, max_salary)
+values (1,'Java Developer',5,100000,1000000);
+
+CREATE TABLE student2 (
+    id INT,
+    name VARCHAR,
+    full_name VARCHAR,
+    age INT,
+    course INT
+);
+
+INSERT INTO student2(id, name, full_name, age, course)
+values (1,'Nurziinat','Mamatzhanova',19,2);
+
+CREATE TABLE president(
+    name VARCHAR,
+    sur_name VARCHAR,
+    age INT,
+    country VARCHAR,
+    year_of_the_start_of_the_board INT
+
+);
+
+INSERT INTO president(name, sur_name, age, country, year_of_the_start_of_the_board)
+values ('Barack', 'Obama',60,'USA',2009);
+
+
+CREATE TABLE person(
+    name VARCHAR,
+    age INT,
+    sur_name VARCHAR,
+    nick_name VARCHAR,
+    year_of_birth VARCHAR
+);
+
+INSERT INTO person (name, age, sur_name, nick_name, year_of_birth)
+values ('Nurmuhammad',21,'Nurbekov','Blogger',2001),
+       ('Maksat',27,'Kairulaev','Dubai bro and Sheikh',1995),
+       ('Nursultan',32,'Tatenov','Uti-puti and Marco-polo',1990);
+
+CREATE TABLE song (
+    name VARCHAR,
+    year INT,
+    author VARCHAR,
+    language VARCHAR,
+    duration INT
+);
+
+INSERT INTO song (name, year, author, language, duration)
+values ('Save me',2015,'BTS','korean',3);
+
+CREATE TABLE region (
+    id INT,
+    name VARCHAR,
+    population VARCHAR,
+    area VARCHAR,
+    food VARCHAR
+);
+
+INSERT INTO region(id, name, population, area, food)
+values (1,'Jalal-Abad',32418,17048,1999);
